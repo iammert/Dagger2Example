@@ -1,14 +1,12 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "co.mobiwise.dagger2example"
         minSdkVersion 21
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -21,9 +19,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    apt 'com.google.dagger:dagger-compiler:2.0'
-    compile 'com.google.dagger:dagger:2.0'
-    compile 'org.glassfish:javax.annotation:10.0-b28'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.0'
+    implementation 'com.google.dagger:dagger:2.0'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
 }
